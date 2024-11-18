@@ -117,13 +117,13 @@ for nodeName in nodeList:
     if nodeName in ['pc160', 'pc161', 'pc162', 'pc163']:
         host_iface2 = host.addInterface()
         host_iface2.component_id = "eth3"
-        host_iface2.addAddress(pg.IPv4Address("192.168.40." + str(i+40), "255.255.255.0"))
+        host_iface2.addAddress(pg.IPv4Address("192.100." + str(i + 41) + ".1", "255.255.0.0"))
     fpga_iface1 = fpga.addInterface()
     fpga_iface1.component_id = "eth0"
-    fpga_iface1.addAddress(pg.IPv4Address("192.168.40." + str(i+10), "255.255.255.0"))
+    fpga_iface1.addAddress(pg.IPv4Address("192.100." + str(i + 51) + ".1", "255.255.0.0"))
     fpga_iface2 = fpga.addInterface()
     fpga_iface2.component_id = "eth1"
-    fpga_iface2.addAddress(pg.IPv4Address("192.168.40." + str(i+20), "255.255.255.0"))
+    fpga_iface2.addAddress(pg.IPv4Address("192.100." + str(i + 61) + ".1", "255.255.0.0"))
     
     lan.addInterface(fpga_iface1)
     lan.addInterface(fpga_iface2)
